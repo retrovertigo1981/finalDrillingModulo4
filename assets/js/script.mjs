@@ -5,6 +5,9 @@ import {
   numberGeneratorThree,
 } from "./generatorsFunctions.mjs";
 import fetchData from "./fetchData.mjs";
+
+// manipulacion del DOM
+
 const mainCardOne = document.querySelector(".mainCardOne");
 const mainCardTwo = document.querySelector(".mainCardTwo");
 const mainCardThree = document.querySelector(".mainCardThree");
@@ -25,8 +28,6 @@ mainCardOne.addEventListener("mouseenter", async () => {
   const cardResult = cardOne(data);
 
   await mainCardOne.parentNode.insertAdjacentHTML("beforeend", cardResult);
-
-  console.log(value);
 });
 
 mainCardTwo.addEventListener("mouseenter", async () => {
@@ -40,8 +41,6 @@ mainCardTwo.addEventListener("mouseenter", async () => {
   const cardResult = cardTwo(data);
 
   await mainCardTwo.parentNode.insertAdjacentHTML("beforeend", cardResult);
-
-  console.log(value);
 });
 
 mainCardThree.addEventListener("mouseenter", async () => {
@@ -56,6 +55,4 @@ mainCardThree.addEventListener("mouseenter", async () => {
   const cardResult = cardThree(data);
 
   await mainCardThree.parentNode.insertAdjacentHTML("beforeend", cardResult);
-
-  console.log(value);
 });

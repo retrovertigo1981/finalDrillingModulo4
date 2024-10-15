@@ -9,7 +9,7 @@ async function fetchData(num) {
   });
 
   let data = await response.json();
-  console.log(data);
+
   return data;
 }
 
