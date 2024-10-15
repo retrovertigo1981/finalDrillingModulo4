@@ -8,7 +8,7 @@ function* numberGeneratorOne() {
 
 function* numberGeneratorTwo() {
   let num = 6;
-  while (num <= 11) {
+  while (num <= 10) {
     yield num;
     num++;
   }
@@ -16,7 +16,7 @@ function* numberGeneratorTwo() {
 
 function* numberGeneratorThree() {
   let num = 12;
-  while (num <= 17) {
+  while (num <= 16) {
     yield num;
     num++;
   }

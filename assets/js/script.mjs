@@ -13,10 +13,13 @@ const generatorOne = numberGeneratorOne();
 const generatorTwo = numberGeneratorTwo();
 const generatorThree = numberGeneratorThree();
 
-mainCardOne.addEventListener("click", async () => {
+mainCardOne.addEventListener("mouseenter", async () => {
   const { value, done } = generatorOne.next();
 
-  if (done) return;
+  if (done) {
+    mainCardOne.removeEventListener("mouseenter", arguments[0]);
+    return;
+  }
 
   const data = await fetchData(value);
   const cardResult = cardOne(data);
@@ -26,11 +29,13 @@ mainCardOne.addEventListener("click", async () => {
   console.log(value);
 });
 
-mainCardTwo.addEventListener("click", async () => {
+mainCardTwo.addEventListener("mouseenter", async () => {
   const { value, done } = generatorTwo.next();
 
-  if (done) return;
-
+  if (done) {
+    mainCardTwo.removeEventListener("mouseenter", arguments[0]);
+    return;
+  }
   const data = await fetchData(value);
   const cardResult = cardTwo(data);
 
@@ -39,10 +44,13 @@ mainCardTwo.addEventListener("click", async () => {
   console.log(value);
 });
 
-mainCardThree.addEventListener("click", async () => {
+mainCardThree.addEventListener("mouseenter", async () => {
   const { value, done } = generatorThree.next();
 
-  if (done) return;
+  if (done) {
+    mainCardThree.removeEventListener("mouseenter", arguments[0]);
+    return;
+  }
 
   const data = await fetchData(value);
   const cardResult = cardThree(data);
